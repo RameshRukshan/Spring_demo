@@ -23,12 +23,12 @@ public class StudentController {
     @Autowired
     private StudentService stuService;
     
-    @GetMapping(path = "/students")
+    @GetMapping(path = "/students")         //set path to get all the student details
     public List<Student> getAllStudents(){
         return stuService.getAllStudent();
     }
     
-    @GetMapping(path = "/students/{id}")
+    @GetMapping(path = "/students/get_by_id={id}")        //set path to get student details by using ID
     public Student getStudentByID(@PathVariable int id){
         return stuService.getStudentByID(id);
     }
