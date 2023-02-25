@@ -4,6 +4,7 @@
  */
 package com.example.testdemodb.data;
 
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,7 @@ import org.springframework.stereotype.Repository;
 //JpaRepository <Entity class of operation, Primary key data type>
 @Repository
 public interface StudentRepository extends JpaRepository <Student, Integer>{
+
+    public Optional<Student> findAllById(int id);
     
 }

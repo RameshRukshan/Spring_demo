@@ -38,4 +38,14 @@ public class StudentService {
     public Student createStudent(Student stu){
         return stuRepo.save(stu);
     }
+    
+    //update student by already given id
+    public Student updateStudent (Student stu){
+        return stuRepo.save(stu);  
+    }
+    
+    public void deleteStudentByID (int id){
+        stuRepo.deleteById(id);
+        //return stu.get();
+    }
 }

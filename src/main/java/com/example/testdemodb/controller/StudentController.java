@@ -8,9 +8,11 @@ import com.example.testdemodb.data.Student;
 import com.example.testdemodb.service.StudentService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +39,16 @@ public class StudentController {
     
     @PostMapping(path = "/students")
     public Student createStudent(@RequestBody Student stu){
-        return stuService.createStudent(stu);
+        return stuService.createStudent(stu); 
+    }
+    
+    @PutMapping(path = "/students")
+    public Student updateStudent(@RequestBody Student stu){
+        return stuService.createStudent(stu); 
+    }
+    
+    @DeleteMapping(path = "/students/{id}") 
+    public void deleteStudent(@PathVariable int id){
+        stuService.deleteStudentByID(id);
     }
 }
