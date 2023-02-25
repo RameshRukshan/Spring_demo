@@ -33,4 +33,9 @@ public class StudentService {
         Optional<Student> stu = stuRepo.findById(id);
         return stu.get();
     }
+    
+    //create student
+    public Student createStudent(Student stu){
+        return stuRepo.save(stu);
+    }
 }
